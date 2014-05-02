@@ -1,0 +1,56 @@
+html, body {
+	background-color:#A7C9E2;
+	width: 100%;
+	padding:0;
+	margin:0;
+}
+
+.sidebar {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	height: 100%;
+	width: 40px;
+	background-color: #D27979;
+}
+
+.sidebar .showCards {
+	left: 5px;
+	position: absolute;
+	top: 50%;
+	margin-top: -16px;
+	width: 32px;
+	height: 32px;
+	background-image: url("../image/icon/32x32/row 9/10.png");
+	cursor: pointer;
+}
+
+.card {
+	border: 1px solid black;
+	position: absolute;
+}
+
+.nw {
+
+}
+
+.ne {
+
+}
+
+.se {
+
+}
+
+.sw {
+
+}
+
+.container {
+	position: absolute;
+	left: 50px;
+	right: 10px;
+	top: 10px;
+	bottom: 10px;
+	border: 2px solid red;
+}
