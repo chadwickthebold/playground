@@ -1,0 +1,101 @@
+@electronColor: #CCCC7F;
+@protonColor: #B8E2FF;
+@neutronColor: #FF8583;
+@bgColor: #A3A3A3;
+
+html, body {
+	margin:0;
+	padding:0;
+	background-color: @bgColor;
+}
+
+.demoContainer {
+	margin: 100px auto;
+
+	.controlsContainer {
+		
+	}
+
+	.velocityContainer {
+	width: 500px;
+	height: 500px;
+	position: relative;
+
+	.nucleus {
+		background-color: @protonColor;
+		width: 25%;
+		height: 25%;
+		border-radius: 50%;
+		top: 37.5%;
+		margin: auto;
+		position: absolute;
+	}
+}
+}
+
+
+
+
+.Css-container {
+	display: none;
+	width: 500px;
+	height: 500px;
+	position: relative;
+	margin: 100px auto;
+}
+
+.planet, .moon {
+	position: absolute;
+	border-radius: 50%;
+}
+
+.planet {
+	width: 25%;
+	height: 25%;
+	background-color: #FF6952;
+	top: 37.5%;
+	left: 37.5%;
+	z-index: 2;
+}
+
+.moon {
+	width: 5%;
+	height: 5%;
+	background-color: #79A9FF;
+	top: 47.5%;
+	animation-duration: 3s;
+	animation-name: orbit;
+	animation-iteration-count: infinite;
+	
+	z-index: 2;
+}
+
+@keyframes orbit {
+	0%, 100% {
+		left: 15%;
+		z-index: 2;
+		animation-timing-function: ease-in;
+	}
+
+	25% {
+		left: 46.25%;
+		z-index: 3;
+		width: 7.5%;
+		height: 7.5%;
+		animation-timing-function: ease-out;
+	}
+
+	50% {
+		left: 75%;
+		z-index: 2;
+		animation-timing-function: ease-in;
+	}
+
+	75% {
+		left: 49.25%;
+		z-index: 1;
+		width: 1.5%;
+		height: 1.5%;
+		animation-timing-function: ease-out;
+	}
+}
