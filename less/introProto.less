@@ -1,7 +1,56 @@
 @bgColor: #262626;
+@containerColor: #F7F7F7;
+@containerWidth: 32em;
+@quadWidth: @containerWidth / 2;
 
 html, body {
 	margin:0;
 	padding:0;
 	background-color: @bgColor;
+}
+
+body {
+	padding-top: 10em;
+}
+
+.container {
+	min-width: 32em;
+	width: 66%;
+	margin: 0 auto;
+}
+
+.quadWrapper {
+	transform: rotate(45deg);
+	width: @containerWidth;
+	height: @containerWidth;
+	margin: 0 auto;
+	background-color: @containerColor;
+
+	.quad {
+		float: left;
+		padding: 0;
+		margin: 0;
+		width:@quadWidth;
+		height:@quadWidth;
+
+		.desc {
+			
+		}
+	}
+
+	.q1 {
+		background-color: #FF8C88;
+	}
+
+	.q2 {
+		background-color: #A7FFFE;
+	}
+
+	.q3 {
+		background-color: #CCC380;
+	}
+
+	.q4 {
+		background-color: #9CFFA8;
+	}
 }
