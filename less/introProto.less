@@ -3,6 +3,8 @@
 @boxWidth: 32em;
 @containerWidth: sqrt(pow(@boxWidth, 2) * 2) + 1em;
 @quadWidth: @boxWidth / 2;
+@hoveredWidth: @quadWidth + 5em;
+@descFontSize: 2em;
 
 html, body {
 	margin:0;
@@ -10,14 +12,17 @@ html, body {
 	background-color: @bgColor;
 }
 
-body {
-	padding-top: 10em;
-}
-
 .container {
 	min-width: @containerWidth;
 	width: 66%;
 	margin: 0 auto;
+	overflow: hidden;
+	height: @containerWidth;
+	padding-top: 10em; /* This padding prevents the top of the quad box from getting chopped */
+
+	h1 {
+		color: @containerColor;
+	}
 }
 
 .quadWrapper {
@@ -43,11 +48,19 @@ body {
 			.desc {
 				display: block;
 				width: 100%;
-				line-height: @quadWidth;
+				line-height: @quadWidth / @descFontSize;
 				text-align: center;
 				vertical-align: middle;
+				font-family: 'Playfair Display', serif;
+				font-weight: 400;
+				font-style: italic;
+				font-size: @descFontSize;
 			}
 		}
+	}
+
+	.quadActive {
+		z-index: 1;
 	}
 
 	.q1 {
