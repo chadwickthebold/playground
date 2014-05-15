@@ -18,14 +18,10 @@
 				$(this).find('.desc').velocity({
 					'lineHeight': '+=5em',
 					'width': '+=5em'
-				})
-				$quads.not(this).velocity({
-					width: "-=5em",
-					height: "-=5em"
-				})
+				});
 			}).on('mouseleave.quad', function() {
-				$(this).velocity('reverse');
-				$(this).find('.desc').velocity('reverse');
-				$quads.not(this).velocity('reverse');
+				$(this).velocity('reverse')
+								.removeClass('quadActive')
+								.find('.desc').velocity('reverse');
 			});
 }())

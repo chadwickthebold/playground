@@ -1,10 +1,11 @@
-@bgColor: #262626;
-@containerColor: #F7F7F7;
+@bgColor: #E7E7E7;
+@containerColor: #262626;
 @boxWidth: 32em;
 @containerWidth: sqrt(pow(@boxWidth, 2) * 2) + 1em;
 @quadWidth: @boxWidth / 2;
 @hoveredWidth: @quadWidth + 5em;
 @descFontSize: 2em;
+@boxShadowColor: #666;
 
 html, body {
 	margin:0;
@@ -26,11 +27,12 @@ html, body {
 }
 
 .quadWrapper {
-	transform: rotate(45deg);
 	width: @boxWidth;
 	height: @boxWidth;
 	margin: 0 auto;
 	background-color: @containerColor;
+	position: relative;
+	box-shadow: 0 7px 6px @boxShadowColor;
 
 	.quad {
 		position: absolute;
@@ -43,7 +45,6 @@ html, body {
 			position: absolute;
 			width: 100%;
 			height: 100%;
-			transform: rotate(-45deg);
 
 			.desc {
 				display: block;
@@ -61,6 +62,7 @@ html, body {
 
 	.quadActive {
 		z-index: 1;
+		box-shadow: 0 7px 6px @boxShadowColor;
 	}
 
 	.q1 {
