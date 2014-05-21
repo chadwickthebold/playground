@@ -8,20 +8,4 @@
 			$q4 = $('.q4'),
 			$quadContainer = $('.quadWrapper'),
 			$quads = $('.quad');
-
-			$quads.on('mouseenter.quad', function(){
-				$quads.removeClass('quadActive');
-				$(this).velocity({
-					width: "+=5em",
-					height: "+=5em"
-				}).addClass('quadActive');
-				$(this).find('.desc').velocity({
-					'lineHeight': '+=5em',
-					'width': '+=5em'
-				});
-			}).on('mouseleave.quad', function() {
-				$(this).velocity('reverse')
-								.removeClass('quadActive')
-								.find('.desc').velocity('reverse');
-			});
 }())

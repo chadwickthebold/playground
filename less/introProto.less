@@ -1,5 +1,6 @@
 @bgColor: #E7E7E7;
-@containerColor: #262626;
+@textColor: #262626;
+@containerColor: #F7F7F7;
 @boxWidth: 32em;
 @containerWidth: sqrt(pow(@boxWidth, 2) * 2) + 1em;
 @quadWidth: @boxWidth / 2;
@@ -19,27 +20,71 @@ html, body {
 	margin: 0 auto;
 	overflow: hidden;
 	height: @containerWidth;
-	padding-top: 10em; /* This padding prevents the top of the quad box from getting chopped */
+	padding-top: 5em; /* This padding prevents the top of the quad box from getting chopped */
 
 	h1 {
-		color: @containerColor;
+		padding-left: 0.2em;
+		color: @textColor;
 	}
 }
 
 .quadWrapper {
-	width: @boxWidth;
-	height: @boxWidth;
+	width: @boxWidth + 0.5em;
+	height: @boxWidth + 0.5em;
 	margin: 0 auto;
 	background-color: @containerColor;
 	position: relative;
-	box-shadow: 0 7px 6px @boxShadowColor;
+	box-shadow: 4px 4px 10px @boxShadowColor;
+
+	hr {
+		position: absolute;
+		width: 45%;
+		margin: -1px 2.5% 0 2.5%;
+		top: 50%;
+	}
+
+	.vr {
+		position: absolute;
+		height: 45%;
+		width: 1px;
+		left: 50%;
+		margin: 2.5% -1px 2.5% 0;
+		background-color: #474747;
+	}
+
+	.sep1 {
+		top: 0;
+	}
+
+	.sep2 {
+		left: 50%;
+	}
+
+	.sep3 {
+		top: 50%;
+	}
+
+	.sep4 {
+		left: 0;
+	}
+
+	
 
 	.quad {
 		position: absolute;
+		display: inline-block;
+		cursor: pointer;
 		padding: 0;
 		margin: 0;
 		width:@quadWidth;
 		height:@quadWidth;
+		-webkit-transition-duration: 0.3s;
+		transition-duration: 0.3s;
+		-webkit-transition-property: box-shadow;
+		transition-property: box-shadow;
+		-webkit-transform: translateZ(0);
+		transform: translateZ(0);
+		box-shadow: 0 0 1px rgba(0, 0, 0, 0);
 
 		.descWrapper {
 			position: absolute;
@@ -60,32 +105,39 @@ html, body {
 		}
 	}
 
-	.quadActive {
-		z-index: 1;
-		box-shadow: 0 7px 6px @boxShadowColor;
-	}
-
 	.q1 {
 		top: 0;
 		left: 0;
-		background-color: #FF8C88;
+
+		&:hover, &:focus, &:active {
+			box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+		}
 	}
 
 	.q2 {
 		top: 0;
 		right: 0;
-		background-color: #A7FFFE;
+		
+		&:hover, &:focus, &:active {
+			box-shadow: -2px 2px 2px rgba(0, 0, 0, 0.3);
+		}
 	}
 
 	.q3 {
 		bottom: 0;
 		right: 0;
-		background-color: #CCC380;
+		
+		&:hover, &:focus, &:active {
+			box-shadow: -2px -2px 2px rgba(0, 0, 0, 0.3);
+		}
 	}
 
 	.q4 {
 		bottom: 0;
 		left: 0;
-		background-color: #9CFFA8;
+		
+		&:hover, &:focus, &:active {
+			box-shadow: 2px -2px 2px rgba(0, 0, 0, 0.3);
+		}
 	}
 }
