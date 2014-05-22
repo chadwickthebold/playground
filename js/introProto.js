@@ -6,6 +6,46 @@
 			$q2 = $('.q2'),
 			$q3 = $('.q3'),
 			$q4 = $('.q4'),
-			$quadContainer = $('.quadWrapper'),
+			$quadWrapper = $('.quadWrapper'),
 			$quads = $('.quad');
+
+			$quads.on('click.quad', function() {
+				var duration1 = 500
+						delay1 = 600,
+						duration2 = 500,
+						thisQuad = $(this);
+
+				// Animate the selected quadrant
+				thisQuad.addClass('selected').velocity({
+					width: '100%',
+					height: '100%'
+				}, {
+					duration: duration1,
+					easing: 'easeOutCubic'
+				});
+
+				// Animate the text inside the quadrant
+				thisQuad.find('span').velocity({
+					'lineHeight': '16em',
+					width: '100%',
+					height: '100%'
+				}, {
+					duration: duration1,
+					easing: 'easeOutCubic'
+				}).delay(100).velocity({
+					opacity: 0
+				}, {
+					duration: duration2,
+					display: 'none'
+				});
+
+				// Animate the page container
+				$quadWrapper.delay(delay1).velocity({
+					width: '100%',
+					height: '100%'
+				}, {
+					duration: duration2,
+					easing: 'easeOutCubic'
+				});
+			});
 }())
