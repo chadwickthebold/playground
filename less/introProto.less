@@ -2,7 +2,7 @@
 @textColor: #262626;
 @containerColor: #F7F7F7;
 @boxWidth: 32em;
-@containerWidth: sqrt(pow(@boxWidth, 2) * 2) + 1em;
+@containerWidth: @boxWidth + 16em;
 @quadWidth: @boxWidth / 2;
 @hoveredWidth: @quadWidth + 5em;
 @descFontSize: 2em;
@@ -18,8 +18,6 @@ html, body {
 	padding:0;
 }
 
-
-
 .container {
 	min-width: @containerWidth;
 	width: 66%;
@@ -31,6 +29,7 @@ html, body {
 	h1 {
 		padding-left: 0.2em;
 		color: @textColor;
+		margin-bottom: 0.34em;
 	}
 }
 
@@ -74,8 +73,6 @@ html, body {
 	.sep4 {
 		left: 0;
 	}
-
-	
 
 	.quad {
 		position: absolute;
