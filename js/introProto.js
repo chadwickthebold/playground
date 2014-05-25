@@ -39,10 +39,17 @@
 					display: 'none'
 				});
 
+				thisQuad.find('.content').delay(100 + duration1 + duration2).velocity({
+					opacity: 1
+				}, {
+					display: 'block',
+					duration: duration2
+				});
+
 				// Animate the page container
 				$quadWrapper.delay(delay1).velocity({
 					width: '100%',
-					height: '100%'
+					height: '+=2em'
 				}, {
 					duration: duration2,
 					easing: 'easeOutCubic'

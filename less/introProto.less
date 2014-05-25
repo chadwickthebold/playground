@@ -2,7 +2,7 @@
 @textColor: #262626;
 @containerColor: #F7F7F7;
 @boxWidth: 32em;
-@containerWidth: @boxWidth + 16em;
+@containerWidth: @boxWidth;
 @quadWidth: @boxWidth / 2;
 @hoveredWidth: @quadWidth + 5em;
 @descFontSize: 2em;
@@ -23,7 +23,6 @@ html, body {
 	width: 66%;
 	margin: 0 auto;
 	overflow: visible;
-	height: @containerWidth;
 	//padding-top: 5em; /* This padding prevents the top of the quad box from getting chopped */
 
 	h1 {
@@ -91,16 +90,28 @@ html, body {
 		transform: translateZ(0);
 		box-shadow: 0 0 1px rgba(0, 0, 0, 0);
 
+		.desc, h2 {
+			font-family: 'Playfair Display', serif;
+			font-weight: 400;
+			font-style: italic;
+			font-size: @descFontSize;
+			margin: 0.5em 0 0.5em 0;
+		}
+
 		.desc {
 			display: block;
 			width: 100%;
 			line-height: @quadWidth / @descFontSize;
 			text-align: center;
 			vertical-align: middle;
-			font-family: 'Playfair Display', serif;
-			font-weight: 400;
-			font-style: italic;
-			font-size: @descFontSize;
+		}
+
+		.content {
+			display: none;
+
+			p, div, h2, h3 {
+				margin-left: 0.5em
+			}
 		}
 	}
 
